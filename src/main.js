@@ -63,6 +63,33 @@ export default class App {
             return numero3;
         }
     }
+
+    calcular(numero1, numero2, operador){
+        switch(operador){
+            case "+":
+                return numero1 + numero2;
+                break;
+            
+            case "-":
+                return numero1 - numero2;
+                break;
+
+            case "*":
+                return numero1 * numero2;
+                break;
+
+            case "/":
+                return numero1 /  numero2;
+                break;
+
+            case "%":
+                return numero1 % numero2;
+                break;
+
+            default:
+                return -1;
+        }
+    }
 }
 
 let app = new App();
@@ -75,7 +102,7 @@ console.log(app.esPar(6));
 console.log(app.esMultiplo(20,4));
 console.log(app.esMultiplo(30,7));
 
-//Demostracion de la funcion esMultiplo.
+//Demostracion de la funcion calcularSalario.
 console.log(app.calcularSalario(1,5));
 console.log(app.calcularSalario(5,6));
 
@@ -88,3 +115,8 @@ console.log(app.obtenerCalificacion(-1));
 console.log(app.obtenerCercano100(103,50,80));
 console.log(app.obtenerCercano100(60,95,120));
 console.log(app.obtenerCercano100(56,150,105));
+
+//Demostracion de la funcion calcular.
+console.log(app.calcular(2,4,"+"));
+console.log(app.calcular(20,5,"/"));
+console.log(app.calcular(2,4,"="));
