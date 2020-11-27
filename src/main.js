@@ -49,6 +49,20 @@ export default class App {
             return "ERROR";
         }
     }
+
+    obtenerCercano100(numero1, numero2, numero3){
+        let aux1 = Math.abs(numero1 - 100);
+        let aux2 = Math.abs(numero2 - 100);
+        let aux3 = Math.abs(numero3 - 100);
+
+        if((aux1 < aux2) && (aux1 < aux3)){
+            return numero1;
+        }else if((aux2 < aux1) && (aux2 < aux3)){
+            return numero2;
+        }else if((aux3 < aux1) && (aux3 < aux2)){
+            return numero3;
+        }
+    }
 }
 
 let app = new App();
@@ -69,3 +83,8 @@ console.log(app.calcularSalario(5,6));
 console.log(app.obtenerCalificacion(5));
 console.log(app.obtenerCalificacion(10));
 console.log(app.obtenerCalificacion(-1));
+
+//Demostracion de la funcion obtenerCalificacion.
+console.log(app.obtenerCercano100(103,50,80));
+console.log(app.obtenerCercano100(60,95,120));
+console.log(app.obtenerCercano100(56,150,105));
