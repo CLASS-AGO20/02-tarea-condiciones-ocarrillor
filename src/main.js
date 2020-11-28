@@ -153,6 +153,14 @@ export default class App {
             return costo;
         }
     }
+
+    estaEnRango(limiteInicial, limiteFinal, numero){
+        if((numero > limiteInicial)&&(numero < limiteFinal)){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 
 let app = new App();
@@ -194,3 +202,7 @@ console.log(app.costoRenta(4,10));
 console.log(app.costoBoletos(4,1));
 console.log(app.costoBoletos(5,3));
 console.log(app.costoBoletos(1,5));
+
+//Demostracion de la funcion estaEnRango.
+console.log(app.estaEnRango(12,30,17));
+console.log(app.estaEnRango(5,20,4));
