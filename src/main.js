@@ -127,9 +127,36 @@ export default class App {
                 return -1;
         }
     }
+
+    costoBoletos(boletos, zona){
+        let costo;
+        switch(zona){
+            case 1:
+                costo = boletos * 300;
+                break;
+
+            case 2:
+                costo = boletos * 450;
+                break;
+
+            case 3:
+                costo = boletos * 700;
+                break;
+
+            default:
+                return -1;
+        }
+
+        if(costo > 2000){
+            return costo * 0.93;
+        }else{
+            return costo;
+        }
+    }
 }
 
 let app = new App();
+
 //Demostracion de la funcion esPar.
 console.log(app.esPar(0));
 console.log(app.esPar(5));
@@ -162,3 +189,8 @@ console.log(app.calcular(2,4,"="));
 console.log(app.costoRenta(5,1));
 console.log(app.costoRenta(10,4));
 console.log(app.costoRenta(4,10));
+
+//Demostracion de la funcion costoBoletos.
+console.log(app.costoBoletos(4,1));
+console.log(app.costoBoletos(5,3));
+console.log(app.costoBoletos(1,5));
