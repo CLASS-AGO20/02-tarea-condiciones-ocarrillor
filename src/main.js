@@ -90,6 +90,43 @@ export default class App {
                 return -1;
         }
     }
+
+    costoRenta(peliculas, dia){
+        let prom, resto;
+        switch(dia){
+            case 1:
+                prom = 60 * parseInt(peliculas / 3);
+                resto = 25 * (peliculas % 3);
+                return prom + resto;
+                break;
+            case 2:
+                prom = 25 * parseInt(peliculas / 2);
+                resto = 25 * (peliculas % 2);
+                return prom + resto;
+                break;
+            case 3:
+                return (25 * 0.85) * peliculas;
+                break;
+            case 4:
+                prom = 25 * parseInt(peliculas / 2);
+                resto = 25 * (peliculas % 2);
+                return prom + resto;
+                break;
+            case 5:
+                prom = 60 * parseInt(peliculas / 3);
+                resto = 25 * (peliculas % 3);
+                return prom + resto;
+                break;
+            case 6:
+                return peliculas * 25;
+                break;
+            case 7:
+                return peliculas * 25;
+                break;
+            default:
+                return -1;
+        }
+    }
 }
 
 let app = new App();
@@ -120,3 +157,8 @@ console.log(app.obtenerCercano100(56,150,105));
 console.log(app.calcular(2,4,"+"));
 console.log(app.calcular(20,5,"/"));
 console.log(app.calcular(2,4,"="));
+
+//Demostracion de la funcion costoRenta.
+console.log(app.costoRenta(5,1));
+console.log(app.costoRenta(10,4));
+console.log(app.costoRenta(4,10));
